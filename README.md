@@ -6,6 +6,11 @@ Our approach proposes the use of a reduced region proposal module based on the s
 
 ![model](images/model.png)
 
+# This repository took as a baseline:
+
+https://github.com/zhangxinyu-xyz/PGAN-VehicleRe-ID?tab=readme-ov-file
+
+https://github.com/michuanhaohao/reid-strong-baseline
 
 ## Environment Setup
 
@@ -32,10 +37,7 @@ pip install -r requirements.txt
 
 #### Test
 
-##### Run evaluator
-
-
-##### Generate GradCAM
+Run ./Test-vric.sh
 
 
 
