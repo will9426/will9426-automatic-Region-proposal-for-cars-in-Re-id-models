@@ -7,11 +7,11 @@ Our approach proposes the use of a reduced region proposal module based on the s
 ## Dilated Region Proposal for cars (DRPC)
 
 
-![model](images/model.png)
+![model](images/figureDPRC.png)
 
 ## Quasi-Monte Carlo for proposal regions (QMCPR)
 
-
+![model](images/qmc.png)
 
 
 # This repository took as a baseline:
