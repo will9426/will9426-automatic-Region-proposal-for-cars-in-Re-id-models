@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 ### Train
 
-#### Pesos
+#### Weigths
 
 
 | Models      | Description                            | Link                                                                                                     |CMC K=5|CMC K=5 change context|
