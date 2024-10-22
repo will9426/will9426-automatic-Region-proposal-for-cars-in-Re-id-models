@@ -20,6 +20,8 @@ https://github.com/zhangxinyu-xyz/PGAN-VehicleRe-ID?tab=readme-ov-file
 
 https://github.com/michuanhaohao/reid-strong-baseline
 
+# Proposed feature extractor
+
 ## Environment Setup
 
 To set up the environment, run the following command to install all necessary dependencies:
