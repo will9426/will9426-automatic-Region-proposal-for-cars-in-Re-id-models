@@ -1,7 +1,5 @@
 # Automatic-Region-proposal-for-cars-in-Re-id-models
 
-## ResNet-Based Region Proposal Approach
-
 Our approach proposes the use of a reduced region proposal module based on the same ResNet-based backbone. This method suggests a simpler approach using branches for both local and global attributes.
 
 ## Dilated Region Proposal for cars (DRPC)
@@ -13,6 +11,9 @@ Our approach proposes the use of a reduced region proposal module based on the s
 
 ![model](images/qmc.png)
 
+# Proposed method
+
+![model](images/model.png)
 
 # This repository took as a baseline:
 
@@ -20,7 +21,6 @@ https://github.com/zhangxinyu-xyz/PGAN-VehicleRe-ID?tab=readme-ov-file
 
 https://github.com/michuanhaohao/reid-strong-baseline
 
-# Proposed feature extractor
 
 ## Environment Setup
 
