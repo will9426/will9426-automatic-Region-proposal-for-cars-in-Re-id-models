@@ -4,7 +4,15 @@
 
 Our approach proposes the use of a reduced region proposal module based on the same ResNet-based backbone. This method suggests a simpler approach using branches for both local and global attributes.
 
+## Dilated Region Proposal for cars (DRPC)
+
+
 ![model](images/model.png)
+
+## Quasi-Monte Carlo for proposal regions (QMCPR)
+
+
+
 
 # This repository took as a baseline:
 
