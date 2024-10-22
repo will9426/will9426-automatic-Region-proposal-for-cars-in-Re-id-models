@@ -1,4 +1,4 @@
-# automatic-Region-proposal-for-cars-in-Re-id-models
+# Automatic-Region-proposal-for-cars-in-Re-id-models
 
 ## ResNet-Based Region Proposal Approach
 
