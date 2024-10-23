@@ -37,7 +37,7 @@ The local attributes branch uses a customized extraction process:
 
 It delimits the most representative regions using one of the methods mentioned to generate stripes. We limit the input to these stripes and use the backbone ResNet feature extractor with the highest receptive field. Then, we compute a sigmoid function to reduce the feature map to relevant information, operating the features extracted with the backbone within the region delimited by the sigmoid function result. Finally, 1x1 convolutions or BatchNorm2d are applied.
 
-## Environment Setup
+# Environment Setup
 
 To set up the environment, run the following command to install all necessary dependencies (CONDA):
 
@@ -46,27 +46,49 @@ conda create -n DRPC_REID python=3.9
 conda activate DRPC_REID
 pip install -r requirements.txt
 ```
-### Dataset
+# Prepare Dataset
 
-### Train
+Download the VRIC dataset and replace it with our vric_train.txt. (Link)
 
-#### Weigths
+In the root directory, execute the following commands:
+
+```bash
+mkdir vehicle_data
+cd vehicle_data
+mkdir VRIC
+mkdir mask
+cd mask
+mkdir VRIC
+```
+In the vehicle_data/VRIC folder, we need the train, query, and gallery images. You only need to replace the .txt files shared in this repository. The mask folder contains the original mask folder from VRIC.
+
+Similarly, you need to replace the root folder and dataset folder in the /configs/softmax_triplet_vric.yml script.
+
+If you're interested in using the VeRi dataset, we need to request it from the author's page:  VeRi [Link to VeRi](https://github.com/JDAI-CV/VeRidataset.) This dataset is under a non-commercial use license. 
+
+# Data Augmentation
+
+This work uses classical transformations based on the concept of instance and region of instance. Our transformations are applied to the entire image and parts of the image, adding variability to the data.
+
+![model](images/transformation.png)
+
+In the same approach, we study, train, and implement GANs to create artificial samples. We explore StyleGAN3 in the repo [Link to Stylegan](https://github.com/NVlabs/stylegan3). This experiment requires significant GPU memory, as this work explores this preprocessing context. We adopt classical augmentation for this reason
+
+# Weigths
 
 
 | Models      | Description                            | Link                                                                                                     |CMC K=5|CMC K=5 change context|
 |-------------|----------------------------------------|----------------------------------------------------------------------------------------------------------|-------|----------------------|
-| PGAN	      | All vric                               | [Link to Model A](https://drive.google.com/file/d/1ZSJwGtm0avQab9Tb1QSYFnQHVVRjPU3d/view?usp=drive_link) |93.1   |56.9                  |
-| PGAN	      | Small vric                             | [Link to Model A](https://drive.google.com/file/d/1A2CsEjNyMPdZSBVXsgCoxSEkDu99boz9/view?usp=drive_link) |60.1   |                      |
-| PGAN	      | All veRi                               | [Link to Model A](https://drive.google.com/file/d/1XWMifTM4l1jNozStG9E42IfstWr4nqYi/view?usp=drive_link) |97.5   |                      |   
-| Ours        | All vric                               | [Link to Model B](https://drive.google.com/file/d/1z60rveZ6hOt0-8ISFajIw75DWkObHx9-/view?usp=drive_link) |89.8   |64.4                  |
-| Ours        | Small vric                             | [Link to Model B](https://drive.google.com/file/d/1-BHt1-5Xxq3_XgU31jWiT_GOjWHt1t9j/view?usp=drive_link) |74.9   |53.3                  |
-| Ours        | All veRi                               | [Link to Model B](https://drive.google.com/file/d/1xje1VY5VDAo46VTCn0NhN81xsHWV13Hu/view?usp=drive_link) |97.2   |                      |
+| PGAN	      | All vric                               | [Link to Model](https://drive.google.com/file/d/1ZSJwGtm0avQab9Tb1QSYFnQHVVRjPU3d/view?usp=drive_link) |93.1   |56.9                  |
+| PGAN	      | Small vric                             | [Link to Model](https://drive.google.com/file/d/1A2CsEjNyMPdZSBVXsgCoxSEkDu99boz9/view?usp=drive_link) |60.1   |                      |
+| PGAN	      | All veRi                               | [Link to Model](https://drive.google.com/file/d/1XWMifTM4l1jNozStG9E42IfstWr4nqYi/view?usp=drive_link) |97.5   |                      |   
+| Ours        | All vric                               | [Link to Model](https://drive.google.com/file/d/1z60rveZ6hOt0-8ISFajIw75DWkObHx9-/view?usp=drive_link) |89.8   |64.4                  |
+| Ours        | Small vric                             | [Link to Model](https://drive.google.com/file/d/1-BHt1-5Xxq3_XgU31jWiT_GOjWHt1t9j/view?usp=drive_link) |74.9   |53.3                  |
+| Ours        | All veRi                               | [Link to Model](https://drive.google.com/file/d/1xje1VY5VDAo46VTCn0NhN81xsHWV13Hu/view?usp=drive_link) |97.2   |                      |
 
 #### Test
 
 Run ./Test-vric.sh
-
-
 
 #### Generate qualitative Result
 
