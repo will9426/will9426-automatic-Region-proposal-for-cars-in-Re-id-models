@@ -6,16 +6,17 @@ import torch
 from torch import nn
 import numpy as np
 from .backbones.resnet import ResNet, BasicBlock, Bottleneck
-from .BasicBottleneck import ResidualBlock, ResNeXtBottleneck
+from .BasicBottleneck import ResidualBlock, ResNeXtBottleneck,SELayer
 from .custom_model_utils import *
 import random
 from scipy.stats.qmc import Halton
 import torch.nn.functional as F
+import cv2
 
 class Baseline(nn.Module):
     in_planes = 2048
     def __init__(self, num_classes, last_stride, model_path, neck, neck_feat, model_name, pretrain_choice,
-                 mode='DPRC', prop_num=10, reduction=16, multi_nums=2, embed_num=128, temp=10.0):
+                 mode='DPRC', refine='BASE', prop_num=10, reduction=16, multi_nums=2, embed_num=128, temp=10.0):
         super(Baseline, self).__init__()
         self.model_name = model_name
         self.mode = mode
@@ -68,9 +69,9 @@ class Baseline(nn.Module):
 
         # Bucle para crear y agregar los bloques a las listas
         for i in range(len(self.num_features)):
-            self.refine_concat.append(self.create_refine_block(self.num_features[i] * 2, self.embed_num * 2))
-            self.refine_prop.append(self.create_refine_block(self.num_features[i], self.embed_num))
-            self.refine_base.append(self.create_refine_block(self.num_features[i], self.embed_num))
+            self.refine_concat.append(self.create_refine_block(self.num_features[i] * 2, self.embed_num * 2,refine))
+            self.refine_prop.append(self.create_refine_block(self.num_features[i], self.embed_num,refine))
+            self.refine_base.append(self.create_refine_block(self.num_features[i], self.embed_num,refine))
 
         # Convertir listas a nn.Sequential
         self.refine_concat = nn.Sequential(*self.refine_concat)
@@ -82,12 +83,19 @@ class Baseline(nn.Module):
         print("Parámetros congelados:", frozen_params)
         print("Parámetros entrenables:", total_params - frozen_params)
 
-    def create_refine_block(self,in_channels, out_channels):
-        block = nn.Sequential(
-            nn.BatchNorm2d(in_channels),
-            ResidualBlock(input_channels=in_channels, output_channels=out_channels),
-            nn.Dropout(0.1),
-        )
+    def create_refine_block(self,in_channels, out_channels, REFINE):
+        if REFINE=='BASE':
+            block = nn.Sequential(
+                nn.BatchNorm2d(in_channels),
+                ResidualBlock(input_channels=in_channels, output_channels=out_channels),
+                nn.Dropout(0.1),
+            )
+        else:
+            block = nn.Sequential(
+                SELayer(channel=in_channels, reduction=8),
+                ResidualBlock(input_channels=in_channels, output_channels=out_channels),
+            )
+
         block.apply(weights_init_kaiming)
         return block
 

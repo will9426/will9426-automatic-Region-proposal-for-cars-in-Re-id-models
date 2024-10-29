@@ -42,8 +42,6 @@ _C.MODEL.METRIC_LOSS_TYPE = 'triplet'
 # If train with label smooth, options: 'on', 'off'
 _C.MODEL.IF_LABELSMOOTH = 'off'
 
-
-_C.MODEL.ATTENTION_DIM = 2048
 # SE attention parameter
 # SE block reduction
 _C.MODEL.REDUCTION = 16
@@ -53,8 +51,8 @@ _C.MODEL.MULTI_NUMS = 1
 _C.MODEL.EMBED_NUM = 256
 # softmax temperature for PAM
 _C.MODEL.TEMPERATURE = 10.0
-_C.MODEL.PGAN = 'yes'
-
+_C.MODEL.MODE = 'DPRC'
+_C.MODEL.REFINE = 'BASE'
 
 
 # -----------------------------------------------------------------------------

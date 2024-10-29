@@ -1,17 +1,17 @@
 MODEL:
   NAME: 'resnet50'
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/home/williamramirez/Desktop/codigoswilliam/proyecto_tesis/custom_model/pretreined/resnet50.pth'
+  PRETRAIN_PATH: '/home/williamramirez/Desktop/codigoswilliam/proyecto_tesis/custom_model/pretrained/resnet50.pth'
   DEVICE_ID: ('0,1')
   METRIC_LOSS_TYPE: 'triplet'
   IF_LABELSMOOTH: 'off'
   IF_WITH_CENTER: 'no'
-  ATTENTION_DIM: 2048
   REDUCTION: 16
   MULTI_NUMS: 1
   EMBED_NUM: 512
   TEMPERATURE: 10.0
-  PGAN: 'yes'
+  MODE: 'DPRC'
+  REFINE: 'BASE'
 
 INPUT:
   SIZE_TRAIN: [224, 224]
@@ -73,6 +73,6 @@ TEST:
   NECK_FEAT: 'after'
   FEAT_NORM: 'yes'
 
-OUTPUT_DIR: "../results/PGAN/VeRi/test02veri"
+OUTPUT_DIR: "../results/PGAN/VeRi/test1"
 
 
