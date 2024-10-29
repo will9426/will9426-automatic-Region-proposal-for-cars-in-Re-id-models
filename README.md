@@ -89,7 +89,7 @@ In the same approach, we study, train, and implement GANs to create artificial s
 
 # Test
 ```bash
-Run ./Test-vric.sh
+Run . /Run_exp1.sh 
 ```
 
 # Qualitative Result
