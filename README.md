@@ -83,8 +83,8 @@ In the same approach, we study, train, and implement GANs to create artificial s
 | PGAN	       | Small vric                             | [Link to Model](https://drive.google.com/file/d/1A2CsEjNyMPdZSBVXsgCoxSEkDu99boz9/view?usp=drive_link) |60.1   |                      |
 | PGAN	       | All veRi                               | [Link to Model](https://drive.google.com/file/d/1XWMifTM4l1jNozStG9E42IfstWr4nqYi/view?usp=drive_link) |97.5   |                      |   
 | Ours Refine 1| All vric                               | [Link to Model](https://drive.google.com/file/d/1z60rveZ6hOt0-8ISFajIw75DWkObHx9-/view?usp=drive_link) |89.8   |64.4                  |
-| Ours Refine 1| Small vric                             | [Link to Model](https://drive.google.com/file/d/1-BHt1-5Xxq3_XgU31jWiT_GOjWHt1t9j/view?usp=drive_link) |74.9   |53.3                  |
-| Ours Refine 2| Small vric                             | [Link to Model]() |71.5   |50.9                  |
+| Ours Refine 1| Small vric                             | [Link to Model](https://drive.google.com/file/d/1KxNxQu18hcfrTA3i9uFxPzaklNYk4pNg/view?usp=drive_link) |74.9   |53.3                  |
+| Ours Refine 2| Small vric                             | [Link to Model](https://drive.google.com/file/d/1UWjwzsfXdTiHOH6elFXf4-knDT07qZbY/view?usp=drive_link) |71.5   |50.9                  |
 | Ours         | All veRi                               | [Link to Model](https://drive.google.com/file/d/1xje1VY5VDAo46VTCn0NhN81xsHWV13Hu/view?usp=drive_link) |97.2   |                      |
 
 #### Test
