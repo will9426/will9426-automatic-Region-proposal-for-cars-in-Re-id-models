@@ -87,11 +87,12 @@ In the same approach, we study, train, and implement GANs to create artificial s
 | Ours Refine 2| Small vric                             | [Link to Model](https://drive.google.com/file/d/1UWjwzsfXdTiHOH6elFXf4-knDT07qZbY/view?usp=drive_link) |71.5   |50.9                  |
 | Ours         | All veRi                               | [Link to Model](https://drive.google.com/file/d/1xje1VY5VDAo46VTCn0NhN81xsHWV13Hu/view?usp=drive_link) |97.2   |                      |
 
-#### Test
-
+# Test
+```bash
 Run ./Test-vric.sh
+```
 
-#### Generate qualitative Result
+# Qualitative Result
 
 ![model](images/inference.png)
 
