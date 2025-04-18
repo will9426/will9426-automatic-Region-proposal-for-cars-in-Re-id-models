@@ -110,15 +110,15 @@ class R1_mAP_reranking(Metric):
             query=cv2.imread(name)
             query = cv2.resize(query, [224,224], interpolation=cv2.INTER_LINEAR)
 
-            print(query.shape)             
+            #print(query.shape)             
             concat_arr = query
-            print(dist.min())
+            #print(dist.min())
             dict_res={}
             for index,dist_val in enumerate(dist):
                 dict_res[dist_val]=g_name[index]   
             diccionario_ordenado = dict(sorted(dict_res.items(), key=lambda item: item[0], reverse=False))
             for k,element in enumerate(diccionario_ordenado):
-                print(element)
+                #print(element)
                 if k<5:
                     result=cv2.imread(diccionario_ordenado[element])
                     #emb=gf[index]
@@ -146,7 +146,7 @@ class R1_mAP_reranking(Metric):
 
 
                     result = cv2.resize(result, [224,224], interpolation=cv2.INTER_LINEAR)
-                    print(result.shape,query.shape)
+                    #print(result.shape,query.shape)
                     concat_arr = np.hstack((concat_arr, result))
                     #print(name,q_name[index])
             #print(name.split('/'))

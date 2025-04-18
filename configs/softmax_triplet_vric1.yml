@@ -1,7 +1,7 @@
 MODEL:
   NAME: 'resnet50'
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/home/williamramirez/Desktop/paper_willy/will9426-automatic-Region-proposal-for-cars-in-Re-id-models/custom_model/pretrained/resnet50.pth'
+  PRETRAIN_PATH: '../custom_model/pretrained/resnet50.pth'
   DEVICE_ID: ('0,1')
   METRIC_LOSS_TYPE: 'triplet'
   IF_LABELSMOOTH: 'off'
@@ -22,8 +22,8 @@ INPUT:
 
 DATASETS:
   NAMES: ('vric')
-  ROOT_DIR: ('/home/williamramirez/Desktop/codigoswilliam/proyecto_tesis/vehicle_data')
-  PROPOSAL_DIR: ('/home/williamramirez/Desktop/codigoswilliam/proyecto_tesis/vehicle_data/masks/VRIC/')
+  ROOT_DIR: ('./vehicle_data/')
+  PROPOSAL_DIR: ('./vehicle_data/masks/VRIC/')
   PROPOSAL_NUM: 8
 
 DATALOADER:
@@ -73,5 +73,5 @@ TEST:
   NECK_FEAT: 'after'
   FEAT_NORM: 'yes'
 
-OUTPUT_DIR: /home/desktop/codigos_william/results/PGAN/VRIC/test1
+OUTPUT_DIR: ../results/PGAN/VRIC/test1
 
