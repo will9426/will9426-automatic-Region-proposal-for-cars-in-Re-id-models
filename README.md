@@ -99,7 +99,8 @@ Run . /Run_exp1.sh
 
 # References
 
-https://github.com/zhangxinyu-xyz/PGAN-VehicleRe-ID?tab=readme-ov-file
+code adapted from: https://github.com/zhangxinyu-xyz/PGAN-VehicleRe-ID?tab=readme-ov-file
 
 https://github.com/michuanhaohao/reid-strong-baseline
+
 
